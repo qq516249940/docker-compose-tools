@@ -7,7 +7,7 @@ services:
     hostname: 'stage-gitlab.xxxx.com'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://stage-gitlab.xxxx.com'
+        external_url 'http://stage-gitlab.xxxx.com:82'
         gitlab_rails['gitlab_shell_ssh_port'] = 2224
         # Add any other gitlab.rb configuration here, each on its own line
     deploy:
@@ -19,7 +19,7 @@ services:
              cpus: '0.5'
              memory: 200M
     ports:
-      - '82:80'
+      - '82:82'
       - '443:443'
       - '2224:22'
     volumes:
