@@ -7,6 +7,14 @@ gitlab:
       external_url 'http://stage-gitlab.xxxx.com'
       gitlab_rails['gitlab_shell_ssh_port'] = 2224
       # Add any other gitlab.rb configuration here, each on its own line
+   deploy:
+     resources:
+        limits:
+           cpus: '2'
+           memory: 4G
+        reservations:
+           cpus: '0.5'
+           memory: 200M
   ports:
     - '80:80'
     - '443:443'
